@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
+import PostReducer from './PostReducer';
 
 export default combineReducers({
-    replaceIt: ()=>  'Hi there, I am dummy reducer to avoid an error '
+    ptext : PostReducer
 });
