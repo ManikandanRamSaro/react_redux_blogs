@@ -9,6 +9,7 @@ class PostList extends React.Component{
         this.props.fetchPost();
     }
     render(){
+        console.log(this.props.ptext)
         return (
             <div>
                 Post List
@@ -17,5 +18,8 @@ class PostList extends React.Component{
     }
 }
  
+const mapStateToProps = state => {
+    return { ptext : state.ptext } // ptext is the key -> which was defined in reducer declareation part, using that only api will be called
+}
 
-export default connect(null,{fetchPost})(PostList);
+export default connect(mapStateToProps,{fetchPost})(PostList);
