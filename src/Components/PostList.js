@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPost } from '../Actions';
+import { fetchPost,fetchAllPostByOne } from '../Actions';
 
 import UserHeader from './UserHeader';
 class PostList extends React.Component{
 
     componentDidMount()
     {
-        this.props.fetchPost();
+        //this.props.fetchPost();
+        this.props.fetchAllPostByOne();
     }
 
     renderLists()
@@ -39,5 +40,5 @@ class PostList extends React.Component{
 const mapStateToProps = state => {
     return { ptext : state.ptext } // ptext is the key -> which was defined in reducer declareation part, using that only api will be called
 }
-
-export default connect(mapStateToProps,{fetchPost})(PostList);
+                                        //fetchPost
+export default connect(mapStateToProps,{fetchAllPostByOne})(PostList);
